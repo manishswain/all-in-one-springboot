@@ -1,0 +1,52 @@
+server:
+    port: 8082
+spring:    profiles:
+      active: qa 
+---
+    
+spring:
+    profiles: qa
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: litbbsr
+        url: jdbc:mysql://localhost:3306/example
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: Welcome to devmanishmowmow!!!
+management:  endpoints:    web:      exposure:        include: "*"
+        exclude: "env,beans"
+---
+
+spring:
+    profiles: dev
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: litbbsr
+        url: jdbc:mysql://localhost:3306/example
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: Welcome to devmanishwwowowo!!!
+    
+---
+
+spring:
+    profiles: prod
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: litbbsr
+        url: jdbc:mysql://localhost:3306/example
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: Welcome to devmanishwwowowo!!!
